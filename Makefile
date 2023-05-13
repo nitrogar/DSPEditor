@@ -13,14 +13,14 @@
 
 #CXX = g++  
 CXX = clang++
-
+N = $(shell nproc)
 EXE = inspector 
 IMGUI_DIR = . 
 SOURCES = $(wildcard *.cpp)
 #SOURCES += $(IMGUI_DIR)/imgui_demo.cpp $(IMGUI_DIR)/imgui_draw.cpp $(IMGUI_DIR)/imgui_tables.cpp $(IMGUI_DIR)/imgui_widgets.cpp $(IMGUI_DIR)/imgui.cpp $(IMGUI_DIR)/imgui_impl_sdl2.cpp $(IMGUI_DIR)/imgui_impl_sdlrenderer.cpp
 #SOURCES += $(IMGUI_DIR)/implot.cpp $(IMGUI_DIR)/implot_items.cpp 
 OBJS = $(addsuffix .o, $(basename $(notdir $(SOURCES))))
-
+DEPENDS = $(patsubst %.cpp,%.d,$(SOURCES))
 CXXFLAGS = -stdlib=libc++ -std=c++20 -I$(IMGUI_DIR)  
 CXXFLAGS +=    -fexperimental-library -g -Wall -Wformat
 LIBS = -lSDL2
@@ -28,8 +28,8 @@ LIBS = -lSDL2
 ##---------------------------------------------------------------------
 ## BUILD RULES
 ##---------------------------------------------------------------------
-
-%.o:%.cpp
+-include $(DEPENDS)
+%.o:%.cpp 
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 %.o:$(IMGUI_DIR)/%.cpp
@@ -38,7 +38,8 @@ LIBS = -lSDL2
 all: $(EXE)
 	@echo Build complete for $(ECHO_MESSAGE)
 	./inspector
-
+multi:
+	$(MAKE) -j$(N) all
 $(EXE): $(OBJS)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(LIBS)
 

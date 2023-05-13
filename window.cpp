@@ -87,8 +87,8 @@ void window::draw() {
   for (auto w : widgets) {
     w->draw();
   }
-  imgui_style_editor();
-  implot_style_editor();
+  //imgui_style_editor(); imgui editor settings customizer
+  //implot_style_editor();
   
 
   // render the scene

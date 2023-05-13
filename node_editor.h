@@ -32,7 +32,7 @@ private:
   std::string name;
   imnode::EditorContext *ctx;
   uint32_t current_id = 100;
-
+  node * current_node;
 public:
   node_editor(window *parent);
   ~node_editor();
@@ -40,16 +40,18 @@ public:
   void delete_node(node *del_node){};
   void draw() override;
   void add_pin(node_pin *);
+  void set_current_node(node * n);
   imnode::PinId get_pin_id();
   imnode::LinkId get_link_id();
   imnode::NodeId get_node_id();
   void ShowStyleEditor(bool *show = nullptr);
-
-      enum pin_type {
-        INPUT,
-        OUTPUT,
-        FLOW
-      };
+  void ShowProperities(bool *show = nullptr);
+  void ShowControlMenu(bool *show = nullptr);
+ enum pin_type {
+    INPUT,
+    OUTPUT,
+    FLOW
+  };
 };
 
 } // namespace app
