@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief Main entry point for final_try
+ * @brief Main entry point for DSPEditor
  */
 
 #include <iostream>
@@ -13,6 +13,6 @@
  * @return int Exit code
  */
 int main(int argc, char* argv[]) {
-    std::cout << "Hello from final_try!" << std::endl;
+    std::cout << "Hello from DSPEditor!" << std::endl;
     return 0;
 }

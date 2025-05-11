@@ -1,21 +1,21 @@
-# Project configuration for final_try
+# Project configuration for DSPEditor
 
 [project]
-name = "final_try"
-version = "0.0.0"
-description = "C++ backend engine for side channel analysis"
-cpp_standard = "23"
+name = "DSPEditor"
+version = "0.1.0"
+description = "A C++ project created with cforge"
+cpp_standard = "17"
 binary_type = "executable"  # executable, shared_lib, static_lib, or header_only
-authors = ["nitrogar <kernel101@yandex.com>"]
-homepage = "https://github.com/nitrogar/DSPEditor"
-repository = "https://github.com/nitrogar/DSPEditor"
-license = "GPLv3"
+authors = ["Your Name <your.email@example.com>"]
+homepage = "https://github.com/yourusername/DSPEditor"
+repository = "https://github.com/yourusername/DSPEditor.git"
+license = "MIT"
 
 [build]
 build_type = "Debug"  # Debug, Release, RelWithDebInfo, MinSizeRel
 directory = "build"
 source_dirs = ["src"]
-include_dirs = ["include"]
+include_dirs = ["include", "deps/highfive/include", "deps/cli/include"]
 # Uncomment to specify custom source patterns
 # source_patterns = ["src/*.cpp", "src/**/*.cpp"]
 # Uncomment to specify individual source files
@@ -49,8 +49,8 @@ generators = []  # Package generators
 # Windows generators: ZIP, NSIS
 # Linux generators: TGZ, DEB, RPM
 # macOS generators: TGZ
-vendor = "Nitrogar Labs"
-contact = "Nitro + ar (kernel101@yandex.com)"
+vendor = "Your Organization"
+contact = "Your Name <your.email@example.com>"
 
 # Dependencies section
 # [dependencies]
@@ -61,10 +61,15 @@ contact = "Nitro + ar (kernel101@yandex.com)"
 # curl = { version = "7.80.0", components = ["ssl"] }  # With components
 
 # git dependencies
-[dependencies.git]
-highfive = { url = "https://github.com/highfive-devs/highfive.git", tag = "main" }
-cli = { url = "https://github.com/daniele77/cli.git", tag = "master" }
+# [dependencies.git]
+# json = { url = "https://github.com/nlohmann/json.git", tag = "v3.11.2" }
+# spdlog = { url = "https://github.com/gabime/spdlog.git", branch = "v1.x" }
 
 # system dependencies
 # [dependencies.system]
 # OpenGL = true  # System-provided dependency
+
+# git dependencies
+[dependencies.git]
+highfive = { url = "https://github.com/highfive-devs/highfive.git", tag = "main" }
+cli = { url = "https://github.com/daniele77/cli.git", tag = "master" }

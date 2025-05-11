@@ -1,14 +1,14 @@
 /**
  * @file example.cpp
- * @brief Implementation of example functions for final_try
+ * @brief Implementation of example functions for DSPEditor
  */
 
-#include "final_try/example.hpp"
+#include "DSPEditor/example.hpp"
 
-namespace final_try {
+namespace DSPEditor {
 
 const char* get_example_message() {
-    return "This is an example function from the final_try library.";
+    return "This is an example function from the DSPEditor library.";
 }
 
-} // namespace final_try
+} // namespace DSPEditor

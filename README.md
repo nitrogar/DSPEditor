@@ -1,4 +1,4 @@
-# final_try
+# DSPEditor
 
 A C++ project created with cforge.
 
@@ -19,7 +19,7 @@ cforge build
 
 ```bash
 # Run the executable
-./build/bin/final_try
+./build/bin/DSPEditor
 
 # Or using cforge
 cforge run

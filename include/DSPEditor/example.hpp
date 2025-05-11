@@ -1,11 +1,11 @@
 /**
  * @file example.hpp
- * @brief Example header file for final_try
+ * @brief Example header file for DSPEditor
  */
 
 #pragma once
 
-namespace final_try {
+namespace DSPEditor {
 
 /**
  * @brief Get an example message
@@ -13,4 +13,4 @@ namespace final_try {
  */
 const char* get_example_message();
 
-} // namespace final_try
+} // namespace DSPEditor
