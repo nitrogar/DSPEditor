@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# Dependices
+deps/*
+dep/*
+
+# build directory
+build/*
+build-debug/*
